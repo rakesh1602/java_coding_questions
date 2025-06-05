@@ -38,13 +38,18 @@ public class ReverseString {
         System.out.println("reversed = " + reversed);
     }
 
+
     public static void reverseAgain(String string) {
-        char[] in = string.toCharArray();
-        StringBuilder out = new StringBuilder();
-        for (int i = in.length - 1; i >= 0; i--) {
-            out.append(in[i]);
-            System.out.println(out.toString());
+        if (string.isEmpty()) {
+            throw new RuntimeException("String cannot be empty");
         }
+
+        char[] chars = string.toCharArray();
+        StringBuilder out = new StringBuilder();
+        for (int i = chars.length - 1; i >= 0; i--) {
+            out.append(chars[i]);
+        }
+        System.out.println("out = " + out.toString());
     }
 
     public static void reverseNumber(Integer integer) {

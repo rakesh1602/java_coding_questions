@@ -1,6 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class MinimumMaximumValue {
@@ -18,8 +19,26 @@ public class MinimumMaximumValue {
         System.out.println(minSum + " " + maxSum);
     }
 
+    private static Integer maximumValue(List<Integer> nums){
+        return nums.stream()
+                .max(Comparator.comparingInt(Integer::intValue))
+                .orElse(0);
+    }
+
+    private static Integer minimumValue(List<Integer> nums){
+        return nums.stream()
+                .min(Comparator.comparingInt(Integer::intValue))
+                .orElse(0);
+    }
+
     public static void main(String[] args) {
-        List<Integer> arr = Arrays.asList(1, 3, 5, 7, 9);
+        List<Integer> arr = Arrays.asList(1, 3, 5, 7, 9,44,11);
         minMaximumValue(arr);
+
+        Integer maximumValue = maximumValue(arr);
+        System.out.println("maximumValue = " + maximumValue);
+
+        Integer minimumValue = minimumValue(arr);
+        System.out.println("minimumValue = " + minimumValue);
     }
 }
