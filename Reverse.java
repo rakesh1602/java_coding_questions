@@ -1,7 +1,11 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
-public class ReverseString {
+public class Reverse {
 
     public static String revereString(String str) {
         char[] chars = str.toCharArray(); // converting string to char arrays
@@ -77,6 +81,12 @@ public class ReverseString {
         }
     }
 
+    public static List<Integer> reverseArray(List<Integer> a) {
+        List<Integer> result = new ArrayList<>(a);
+        Collections.reverse(result);
+        return result;
+    }
+
 
     public static void main(String[] args) {
         String input = "nice";
@@ -92,6 +102,12 @@ public class ReverseString {
 
         int arr[] = {1, 2, 3, 4, 5};
         reverseArray(arr);
+
+
+        //hackerrank
+        List<Integer> integerList = Arrays.asList(1, 4, 3, 2);
+        List<Integer> reverseArrayHackerank = reverseArray(integerList);
+        System.out.println("reverseArrayHackerank = " + reverseArrayHackerank);
     }
 }
 
